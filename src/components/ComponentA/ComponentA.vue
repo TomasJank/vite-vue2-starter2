@@ -1,5 +1,7 @@
 <template>
-  <div class="global-style component-a">paejo</div>
+  <div class="global-style component-a">
+    <button>test</button>
+  </div>
 </template>
 
 <script>

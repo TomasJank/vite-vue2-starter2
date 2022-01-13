@@ -1,5 +1,5 @@
 <template>
-  <div class="global-style component-b">paejo man atrdoo</div>
+  <div>buttton</div>
 </template>
 
 <script>
