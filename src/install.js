@@ -1,5 +1,3 @@
-import { App, Component } from "vue";
-
 
 
 export function install(
