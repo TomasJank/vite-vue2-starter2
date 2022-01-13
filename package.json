@@ -14,7 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build && sass src/assets/main.scss dist/index.css",
+    "build": "vite build && sass src/css/main.css dist/index.css",
     "test": "jest tests/unit",
     "prepare": "husky install",
     "lint": "eslint --ext .ts,vue --fix --ignore-path .gitignore .",
