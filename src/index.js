@@ -1,3 +1,6 @@
-export * from "./components";
+import * as components from "./components";
 
-export * from "./install";
+import { createHComponents } from "./install";
+
+export const createHostingerVue = (options = {}) =>
+  createHComponents({ components, ...options });

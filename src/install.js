@@ -1,15 +1,55 @@
-import * as components from "./components";
-const install = (Vue, options = {}) => {
-  for (let key in components) {
-    console.log("components", components);
-    let _key = options.prefix ? options.prefix + key : key;
-    Vue.component(_key, components[key]);
-  }
-};
+import { App, Component } from "vue";
 
-// auto install
-if (typeof window !== "undefined" && window.Vue) {
-  install(window.Vue);
+
+
+export function install(
+  Vue,
+  args = {}
+) {
+  if ((install ).installed) return;
+  (install ).installed = true;
+
+  const components = args.components || {};
+  const directives = args.directives || {};
+
+  for (const name in directives) {
+    const directive = directives[name];
+
+    Vue.directive(name, directive);
+  }
+
+  (function registerComponents(components) {
+    if (components) {
+      for (const componentName in components) {
+        const component = components[componentName];
+        if (component && !registerComponents(component.subcomponents)) {
+          Vue.component(componentName, component);
+        }
+      }
+      return true;
+    }
+    return false;
+  })(components);
 }
 
-export { install };
+export const createHComponents = (
+  options = {}
+) => {
+  const install = (app) => {
+    const { components = {}, directives = {} } = options;
+
+    for (const key in directives) {
+      const directive = directives[key];
+
+      app.directive(key, directive);
+    }
+
+    for (const key in components) {
+      const component = components[key];
+
+      app.component(key, component);
+    }
+  };
+
+  return { install };
+};
