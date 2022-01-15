@@ -1,5 +1,5 @@
-import ComponentA from '@/components/ComponentA/ComponentA.vue'
-import ComponentB from '@/components/ComponentB/ComponentB.vue'
+import ComponentA from '@/components/ComponentA'
+import ComponentB from '@/components/ComponentB'
 
 export {
   ComponentA,

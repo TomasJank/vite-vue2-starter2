@@ -1,12 +1,12 @@
 {
   "name": "vue2-vite2",
   "version": "0.0.0",
-  "module": "./dist/vite-vue2-starter2.es.js",
-  "main": "./dist/vite-vue2-starter2.umd.js",
+  "module": "./dist/vue2-vite2.es.js",
+  "main": "./dist/vue2-vite2.umd.js",
   "exports": {
     ".": {
-      "import": "./dist/vite-vue2-starter2.es.js",
-      "require": "./dist/vite-vue2-starter2.umd.js"
+      "import": "./dist/vue2-vite2.es.js",
+      "require": "./dist/vue2-vite2.umd.js"
     },
     "./*": "./dist/*"
   },

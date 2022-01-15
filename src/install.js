@@ -4,17 +4,12 @@ export function install(
   Vue,
   args = {}
 ) {
-  if ((install ).installed) return;
-  (install ).installed = true;
+  if ((install).installed) return;
+  (install).installed = true;
 
   const components = args.components || {};
-  const directives = args.directives || {};
 
-  for (const name in directives) {
-    const directive = directives[name];
 
-    Vue.directive(name, directive);
-  }
 
   (function registerComponents(components) {
     if (components) {
@@ -34,15 +29,9 @@ export const createHComponents = (
   options = {}
 ) => {
   const install = (app) => {
-    const { components = {}, directives = {} } = options;
+    const { components = {} } = options;
 
-    for (const key in directives) {
-      const directive = directives[key];
-
-      app.directive(key, directive);
-    }
-
-    for (const key in components) {
+      for (const key in components) {
       const component = components[key];
 
       app.component(key, component);

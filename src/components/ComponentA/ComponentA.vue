@@ -1,6 +1,6 @@
 <template>
   <div class="global-style component-a">
-    <button>test</button>
+    <button>components library component</button>
   </div>
 </template>
 
